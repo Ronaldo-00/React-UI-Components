@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Header.css' //style sheet for header
 import logo from '../logo.png' // file path for logo
-//use state hook
+//use state hook for nav
 const [navLeft, setNavLeft] = useState('-100%');
 // on click to open nav
 const openToggle = () => {
@@ -12,11 +12,28 @@ const closeToggle = () => {
     setNavLeft('-100%');
 };
 
+//use state hook for fixed header
+const [isFixed, setIsFixed] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    if (scrollTop > 100) {
+      setIsFixed(true);
+    } else {
+      setIsFixed(false);
+    }
+  };
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
 
 const Header = () => {
   return (
     <div>
-        <div className="header">{/* header div start tag*/}
+        <div className={`header ${isFixed ? 'fixed' : ''}`}>{/* header div start tag*/}
             <div className="logo">
                 <a href='#'>
                     <img src={logo}></img>
