@@ -1,0 +1,155 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+.contain{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: block;
+  justify-content: center;
+}
+  /* Top-right button */
+.btn-1 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #05af85;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-1:hover {
+  background-color: #0b503e;
+}
+
+/* Overlay to make cart appear centered */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centered cart */
+.cart {
+  background: white;
+  width: 900px;
+  height: auto;
+  padding: 0;
+  border-radius: 10px;
+  position: relative;
+}
+.row{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.col-left{
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/p1.svg);
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+}
+.d-text{
+  font-size: 32px;
+  color: #fff;
+}
+.left-anim{
+  margin-top: 222px;
+  margin-left: 1px;
+  height: 8px;
+  width: 44px;
+  animation: login-anim 1s ease-in-out infinite alternate;
+}
+@keyframes login-anim{
+  0% {
+    width: 0;
+    background-color: transparent;
+  }
+  100% {
+    width: 44px;
+    background-color: white;
+  }
+}
+.text-anim {
+  margin-top: 5px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  transition: opacity 1s ease-in-out;
+}
+.col-right{
+  width: 100%;
+  height: auto;
+}
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.cart-content{
+  padding: 40px;
+  text-align: center;
+  align-items: center;
+}
+/* Login form inputs */
+.input {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  margin: 20px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+/* Password input */
+.password-input {
+  width: 100%;
+  padding-right: 30px; /* Leave space for the eye icon */
+}
+/* Eye icon */
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.login-btn:hover {
+  background-color: #218838;
+}
